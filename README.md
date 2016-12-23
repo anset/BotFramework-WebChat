@@ -5,7 +5,8 @@ Example: If you have one bot that has multiple dialogs avalable, you can add "&t
 
 ## Usage
 
-`http://localhost:8000?s={Direct Line Secret}&tag=sandwich` will send the string 'sandwich' to the bot as soon as the connection is made. The string 'sandwich' will be visible in the chat log. This may be desired isyou want the user to be aware of what is happening (or for debuging).
+`http://localhost:8000?s={Direct Line Secret}&tag=sandwich` will send the string 'sandwich' to the bot as soon as the connection is made. The string 'sandwich' will be visible in the chat log. This may be desired if you want the user to be aware of what is happening (or for debuging).
+
 `http://localhost:8000?s={Direct Line Secret}&tag=-q-sandwich` will do the same, sending the string 'sandwich' to the bot, but the '-q-' prefix will prevent the string from apearing in the chat log. The prefix is removed before the string is sent so you do not need to take it into account on the bot side.
 
 ## Why the fork for something this simple?
