@@ -72,7 +72,11 @@ export class Chat extends React.Component<ChatProps, {}> {
 
     private sendTag(props: ChatProps) {
         if ( typeof props.bot.tag != 'undefined' && props.bot.tag != '') {
-            sendMessage(this.store, props.bot.tag);
+            if ( this.store, props.bot.tag.substring(0,3) === '-q-' ) {
+                sendPostBack(this.store, props.bot.tag.substring(3));
+            } else {
+                sendMessage(this.store, props.bot.tag);
+            }
             props.bot.tag = null;
         }
         

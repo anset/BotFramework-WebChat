@@ -1,3 +1,19 @@
+# Changes from the master repository
+
+I added the possibility to send a first message to the bot automatically when the connection to the bot is first made. This allows you to send a meta tag that conveys state or cntext to the bot.
+Example: If you have one bot that has multiple dialogs avalable, you can add "&tag=xxx" to the URL's quirystirng to send a first message to the bot, automatically selecting the desired dialog.
+
+## Usage
+
+`http://localhost:8000?s={Direct Line Secret}&tag=sandwich` will send the string 'sandwich' to the bot as soon as the connection is made. The string 'sandwich' will be visible in the chat log. This may be desired isyou want the user to be aware of what is happening (or for debuging).
+`http://localhost:8000?s={Direct Line Secret}&tag=-q-sandwich` will do the same, sending the string 'sandwich' to the bot, but the '-q-' prefix will prevent the string from apearing in the chat log. The prefix is removed before the string is sent so you do not need to take it into account on the bot side.
+
+## Why the fork for something this simple?
+
+I sent a [pull](https://github.com/Microsoft/BotFramework-WebChat/pull/241) request to the master but it was rejected. 
+
+---
+
 # Microsoft Bot Framework WebChat
 
 Embeddable web chat control for the [Microsoft Bot Framework](http://www.botframework.com) using the [DirectLine](https://docs.botframework.com/en-us/restapi/directline3/) API.
